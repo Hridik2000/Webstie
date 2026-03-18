@@ -1,0 +1,517 @@
+<!DOCTYPE HTML>
+<!-- Alpha by HTML5 UP -->
+<html>
+<head>
+ <title>Hridik Agarwal | Data Analyst</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- New Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Template CSS -->
+<link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.65;
+    color: #2d3748;
+    background: #f9fafb;
+    margin: 0;
+}
+
+#banner h1 {
+    font-size: 3.4rem;
+    font-weight: 500;
+    color: #f9fafb;
+}
+
+#banner h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Headings – basic */
+ h2, h3, h4 {
+    font-weight: 700;
+    color: #1a202c;
+}
+
+/* Testimonials Slider – slightly bigger images */
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin: 2.5em auto 4em;
+    max-width: 100%;
+    padding: 0 5em; /* more space for arrows */
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 2.2em;
+    padding: 1.5em 0;
+    scrollbar-width: none;
+}
+
+.testimonial-slider::-webkit-scrollbar { display: none; }
+
+.testimonial-slider img {
+    width: 500px;               /* ← slightly bigger than original 340px */
+    max-width: 92vw;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background: #181818;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 736px) {
+    .testimonial-slider img {
+        width: 340px;           /* bigger on mobile too */
+        padding: 12px;
+    }
+    .slider-wrapper { padding: 0 2.5em; }
+}
+
+/* Arrows – left/right positioning */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    background: rgba(40,40,40,0.9);
+    border: 1px solid #444;
+    border-radius: 50%;
+    font-size: 1.9rem;
+    color: #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.slider-arrow:hover {
+    background: #333;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.slider-arrow.prev { left: 10px; }
+.slider-arrow.next { right: 10px; }
+.slider-arrow:disabled { opacity: 0.35; cursor: not-allowed; }
+
+@media screen and (max-width: 736px) {
+    .slider-arrow { width: 48px; height: 48px; font-size: 1.6rem; }
+}
+
+/* Tabs – fixed switching */
+.tabs { margin: 2.5em 0 1em; }
+.tab-labels { display: flex; justify-content: center; gap: 1.5em; margin-bottom: 2em; flex-wrap: wrap; }
+.tab-label {
+    padding: 0.9em 2.2em;
+    background: #f5f5f5;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: all 0.25s ease;
+    user-select: none;
+    border: 1px solid #ddd;
+}
+.tab-label:hover { background: #e8e8e8; }
+input[type="radio"] { display: none; }
+input[type="radio"]:checked + .tab-label { background: #2c3e50; color: white; border-color: #2c3e50; }
+.tab-content { display: none; }
+#tab-excel:checked ~ #content-excel,
+#tab-pbi-tableau:checked ~ #content-pbi-tableau { display: block !important; }
+
+/* Project cards – uniform height + hover */
+.box.post {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 90%;           /* uniform height fix */
+}
+
+.box.post:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Services list – no overspill */
+.services-list {
+    margin-top: 1.3em;
+    padding-left: 1.6em;
+    line-height: 1.58;
+}
+
+.service-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.service-icon img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+</style>
+</head>
+
+<body class="landing is-preload">
+
+    <div id="page-wrapper">       
+
+        <!-- Banner -->
+        <section id="banner">
+            <h1>Hridik Agarwal</h1>
+            <h2>Freelance Data Analyst</h2>
+            <p>I build dashboards, financial models, and automated reporting systems using Power BI, Excel, and Google Sheets.</p>
+            <ul class="actions special">
+                <li><a href="#work-samples" class="button primary">View Projects</a></li>
+                <li><a href="#footer" class="button">Contact Me</a></li>
+            </ul>
+        </section>
+
+        <!-- Main -->
+        <section id="main" class="container">
+
+            <section class="box special">
+                <header class="major">
+                    <h2>Data Analytics & Business Intelligence<br>for better decision making</h2>
+                    <p>I help businesses turn complex data into clear, actionable insights through interactive dashboards, automated reporting systems, and advanced analysis using Power BI, Excel, and Google Sheets.</p>
+                </header>
+            </section>
+
+           <!-- Features / What I Can Do -->
+<section class="box special features">
+    <div class="features-row">
+        <section>
+            <span class="image service-icon">
+                <img src="images/Power Bi.webp"/>
+            </span>
+            <h3>Power BI & Tableau Dashboards</h3>
+            <p>I build interactive, real-time dashboards that turn your data into clear, actionable insights — so you can track performance, spot trends early, make faster decisions, and present compelling stories to stakeholders or executives.</p>
+            <ul class="services-list">
+                <li>Automated sales, marketing & e-commerce performance dashboards</li>
+                <li>Executive KPI & financial overview dashboards</li>
+                <li>Real-time reporting with live data connections</li>
+                <li>Advanced data integration & ETL pipelines</li>
+                <li>Visual storytelling & interactive drill-down reports</li>
+                <li>Custom solutions that save 10–30+ hours/month on manual reporting</li>
+            </ul>
+        </section>
+
+        <section>
+            <span class="image service-icon">
+                <img src="images/Excel.webp"/>
+            </span>
+            <h3>Excel & Google Sheets Systems</h3>
+            <p>I create powerful, automated Excel and Google Sheets solutions that eliminate repetitive work, deliver accurate calculations instantly, and give you reliable tools you can reuse or even sell to your own clients.</p>
+            <ul class="services-list">
+                <li>Custom financial models, trackers & commission calculators</li>
+                <li>Automated reporting templates (weekly/monthly dashboards)</li>
+                <li>Advanced Power Query, Power Pivot & DAX for large datasets</li>
+                <li>Student performance tracking & progress monitoring systems</li>
+                <li>Workflow automation that saves 20–40+ hours per report cycle</li>
+                <li>Fixing complex formulas, error-proofing, and building sellable templates</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="features-row">
+        <section>
+            <span class="image service-icon">
+                <img src="images/Data Analysis.webp"/>
+            </span>
+            <h3>Data Analysis</h3>
+            <p>I clean, structure and deeply analyze your data to uncover hidden patterns, answer critical business questions, and deliver insights that drive better decisions and higher profitability.</p>
+            <ul class="services-list">
+                <li>End-to-end data cleaning & transformation</li>
+                <li>Pattern discovery, trend analysis & root-cause investigation</li>
+                <li>Customer, sales, marketing & operational performance insights</li>
+                <li>Ad-hoc analysis to answer urgent business questions</li>
+                <li>Robust, maintainable data systems that scale with your growth</li>
+            </ul>
+        </section>
+
+        <section>
+            <span class="image service-icon">
+                <img src="images/Automation.webp"/>
+            </span>
+            <h3>Data Automation</h3>
+            <p>I build fully automated workflows that eliminate manual data handling, reduce errors, and let your reports refresh automatically — freeing up your time for strategy instead of repetitive tasks.</p>
+            <ul class="services-list">
+                <li>Power Query & Python-powered data pipelines</li>
+                <li>Automated report generation & distribution</li>
+                <li>Scheduled data refreshes & error-proof systems</li>
+                <li>Custom scripts that save 20–50+ hours per month</li>
+                <li>Maintainable automation that grows with your business</li>
+            </ul>
+        </section>
+    </div>
+</section>
+
+            <!-- Work Samples – 2 tabs -->
+            <section id="work-samples" class="container special">
+                <header class="major">
+                    <h2>Work Samples</h2>
+                    <p>Client projects built with Excel/Google Sheets, Power BI and Tableau — delivering powerful financial tracking, workforce analytics, budget oversight, project planning, sales insights, customer analysis and environmental reporting.</p>
+                </header>
+
+                <div class="tabs">
+                    <input type="radio" name="work-tab" id="tab-excel" checked>
+                    <input type="radio" name="work-tab" id="tab-pbi-tableau">
+
+                    <div class="tab-labels">
+                        <label for="tab-excel" class="tab-label">Excel / Google Sheets</label>
+                        <label for="tab-pbi-tableau" class="tab-label">Power BI & Tableau</label>
+                    </div>
+
+                    <!-- Excel / Google Sheets Tab – 4 projects -->
+                    <div class="tab-content" id="content-excel">
+                        <div class="row">
+
+                            <!-- 1. Financial Tracker -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Financial Tracker.png" alt="Financial Tracker Dashboard">
+                                    </a>
+                                    <h4>Financial Tracker</h4>
+                                    <p>Comprehensive income, expense, savings and category analysis dashboard with monthly trends and change tracking — helps users gain full visibility into cash flow and improve financial discipline.</p>
+                                    <p class="project-tools">Services available in: Excel / Google Sheets<br><small>(Built with Excel + Power Query, Power Pivot, DAX)</small></p>
+                                </section>
+                            </div>
+
+                            <!-- 2. HR Attrition & Retention Analytics -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/HR Dashboard.png" alt="HR Attrition Dashboard">
+                                    </a>
+                                    <h4>HR Attrition & Retention Analytics</h4>
+                                    <p>Department/role-based attrition rates, retention insights, demographics, work-life balance and job satisfaction analysis — enables HR to identify turnover drivers and build stronger, more engaged teams.</p>
+                                    <p class="project-tools">Services available in: Excel / Google Sheets<br><small>(Built with Excel + Power Query, Power Pivot, DAX)</small></p>
+                                </section>
+                            </div>
+
+                            <!-- 3. Project Portfolio & Budget Utilization Tracker -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Executive Dashboard P1.png" alt="Project Budget & Progress Tracker">
+                                    </a>
+                                    <h4>Project Portfolio & Budget Utilization Tracker</h4>
+                                    <p>Monthly progress %, budget utilization, top projects by spend/progress, and financial overview dashboard — helps portfolio managers control costs, detect delays and ensure on-time, on-budget delivery.</p>
+                                    <p class="project-tools">Services available in: Excel / Google Sheets<br><small>(Built with Excel)</small></p>
+                                </section>
+                            </div>
+
+                            <!-- 4. Gantt Chart / Project Timeline -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Gannt Chart.png" alt="Project Gantt Chart">
+                                    </a>
+                                    <h4>Project Timeline & Task Gantt Chart</h4>
+                                    <p>Detailed task planning, start/end dates, duration, status tracking and visual Gantt view — enables teams to plan, track and manage project timelines effectively with clear visibility of progress and delays.</p>
+                                    <p class="project-tools">Services available in: Excel / Google Sheets<br><small>(Built with Google Sheets, fully replicable in Excel)</small></p>
+                                </section>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Power BI & Tableau Tab – 5 projects -->
+                    <div class="tab-content" id="content-pbi-tableau">
+                        <div class="row">
+
+                            <!-- 1. Amazon Seller Dashboard -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Amazon Dasboard.png" alt="Amazon Seller Dashboard">
+                                    </a>
+                                    <h4>Amazon Seller Performance Dashboard</h4>
+                                    <p>Daily/weekly sales, units sold, AOV, margin %, SKU-level breakdown and fee analysis — empowers sellers to track profitability, optimize pricing and scale more effectively.</p>
+                                    <p class="project-tools">Services available in: Power BI</p>
+                                </section>
+                            </div>
+
+                            <!-- 2. Bank Loan Analysis -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Power Bi Bank Loan Analysis.png" alt="Bank Loan Analysis Dashboard">
+                                    </a>
+                                    <h4>Bank Loan Portfolio & Risk Analysis</h4>
+                                    <p>Loan amounts, funded/invested status, charge-off rates, payment behavior by verification/state — supports risk teams in monitoring repayment trends and optimizing lending decisions.</p>
+                                    <p class="project-tools">Services available in: Power BI</p>
+                                </section>
+                            </div>
+
+                            <!-- 3. Customer Spend & Distribution Analysis -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Tableau Customer Analysis.png" alt="Customer Spend & Distribution Dashboard">
+                                    </a>
+                                    <h4>Customer Spend & Distribution Analysis</h4>
+                                    <p>Spend trends by month, segment, employment status, age, country/state with geographic visualization — helps businesses understand customer behavior and optimize targeting/marketing spend.</p>
+                                    <p class="project-tools">Services available in: Tableau (with Tableau Prep)</p>
+                                </section>
+                            </div>
+
+                            <!-- 4. Greenhouse Gas Emissions Analysis -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Emissions.png" alt="Emissions & Temperature Analysis">
+                                    </a>
+                                    <h4>Greenhouse Gas Emissions & Climate Impact Analysis</h4>
+                                    <p>Year-over-year changes in emissions (CH4, CO2, N2O, F-Gas), precipitation and temperature by country with interactive maps — supports environmental analysis and sustainability reporting.</p>
+                                    <p class="project-tools">Services available in: Tableau</p>
+                                </section>
+                            </div>
+
+                            <!-- 5. Workflow Diagram (with animation note) -->
+                            <div class="col-6 col-12-narrower">
+                                <section class="box post">
+                                    <a href="#" class="image fit">
+                                        <img src="images/Workflow.png" alt="Project Workflow Diagram">
+                                    </a>
+                                    <h4>Project Workflow & Process Visualization</h4>
+                                    <p>End-to-end task flow, dependencies, timelines and status overview — clarifies project structure and progress tracking (can be animated with slide transitions for presentations).</p>
+                                    <p class="project-tools">Services available in: Power BI & Tableau<br><small>(Static diagram shown; animation possible via transitions or GIF export)</small></p>
+                                </section>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="container">
+            <header class="major special">
+                <h2>Client Testimonials</h2>
+                <p>What clients say about working with me on Upwork</p>
+            </header>
+
+            <div class="slider-wrapper">
+                <button class="slider-arrow prev" aria-label="Previous testimonial">←</button>
+                
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <img src="images/Upwork Review (1).png" alt="Client Review 1" />
+                    <img src="images/Upwork Review (2).png" alt="Client Review 2" />
+                    <img src="images/Upwork Review (3).png" alt="Client Review 3" />
+                    <img src="images/Upwork Review (4).png" alt="Client Review 4" />
+                    <img src="images/Upwork Review (5).png" alt="Client Review 5" />
+                    <img src="images/Upwork Review (6).png" alt="Client Review 6" />
+                    <img src="images/Upwork Review (7).png" alt="Client Review 7" />
+                    <img src="images/Upwork Review (8).png" alt="Client Review 8" />
+                    <img src="images/Upwork Review (9).png" alt="Client Review 9" />
+                    <img src="images/Upwork Review (10).png" alt="Client Review 10" />
+                    <img src="images/Upwork Review (11).png" alt="Client Review 11" />
+                    <img src="images/Upwork Review (12).png" alt="Client Review 12" />
+                    <img src="images/Upwork Review (13).png" alt="Client Review 13" />
+                    <img src="images/Upwork Review (14).png" alt="Client Review 14" />
+                    <img src="images/Upwork Review (15).png" alt="Client Review 15" />
+                    <img src="images/Upwork Review (16).png" alt="Client Review 16" />
+                    <img src="images/Upwork Review (17).png" alt="Client Review 17" />
+                    <img src="images/Upwork Review (18).png" alt="Client Review 18" />
+                    <img src="images/Upwork Review (19).png" alt="Client Review 19" />
+                    <img src="images/Upwork Review (20).png" alt="Client Review 20" />
+                    <img src="images/Upwork Review (21).png" alt="Client Review 21" />
+                    <img src="images/Upwork Review (22).png" alt="Client Review 22" />
+                </div>
+
+                <button class="slider-arrow next" aria-label="Next testimonial">→</button>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta">
+    <h2>Work With Me</h2>
+    <p>
+        If you need help with dashboards, data analysis, or automated reporting systems, feel free to reach out.
+    </p>
+</section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/hridik-agarwal/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://www.instagram.com/hridik58/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://x.com/agarwal_hr87917" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
+                <li><a href="hridik58@gmail.com" class="icon brands fa-google"><span class="label">gmail</span></a></li>
+                <li><a href="https://www.upwork.com/freelancers/~01cb45405391724e46?mp_source=share" class="icon brands fa-upwork"><span class="label">Upwork</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Hridik Agarwal. All rights reserved.</li>
+                <li>Portfolio</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Slider controls -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('testimonialSlider');
+            if (!slider) return;
+
+            const prevBtn = document.querySelector('.slider-arrow.prev');
+            const nextBtn = document.querySelector('.slider-arrow.next');
+            const slideWidth = 380;
+
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+            });
+
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+            });
+
+            function updateButtons() {
+                prevBtn.disabled = slider.scrollLeft <= 0;
+                nextBtn.disabled = Math.abs(slider.scrollLeft + slider.clientWidth - slider.scrollWidth) < 5;
+            }
+
+            slider.addEventListener('scroll', updateButtons);
+            updateButtons();
+        });
+    </script>
+
+</body>
+</html>
