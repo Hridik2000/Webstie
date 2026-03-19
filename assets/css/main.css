@@ -3426,10 +3426,6 @@
 
 /* Narrower */
 
-	#navPanel, #navButton {
-		display: none;
-	}
-
 	@media screen and (max-width: 840px) {
 
 		/* Basic */
